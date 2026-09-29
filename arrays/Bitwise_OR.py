@@ -1,3 +1,4 @@
+
 class Solution:
     def orArray(self, A):
         answer = []
