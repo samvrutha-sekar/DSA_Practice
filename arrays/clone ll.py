@@ -1,19 +1,18 @@
 class Solution:
-    def cloneLinkedList(self, head):
+    def copyRandomList(self, head):
         if not head:
             return None
 
-        # Step 1: Create a copy of every node
         old_to_new = {}
         curr = head
 
+        # Create copies of all nodes
         while curr:
-            old_to_new[curr] = Node(curr.data)
+            old_to_new[curr] = type(curr)(curr.val)
             curr = curr.next
 
-        # Step 2: Connect next and random pointers
+        # Connect next and random pointers
         curr = head
-
         while curr:
             clone = old_to_new[curr]
 
